@@ -1,0 +1,81 @@
+/**
+ * ScamGuard Pro (CyberVigil AI) - Local Development & Preview Server
+ * Native Node.js HTTP Server with full MIME support & auto browser launcher
+ */
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
+const { exec } = require('child_process');
+
+const PORT = parseInt(process.env.PORT || '8080', 10);
+const ROOT = process.cwd();
+
+const MIME_TYPES = {
+  '.html': 'text/html; charset=UTF-8',
+  '.js': 'text/javascript; charset=UTF-8',
+  '.css': 'text/css; charset=UTF-8',
+  '.json': 'application/json; charset=UTF-8',
+  '.svg': 'image/svg+xml',
+  '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.ico': 'image/x-icon',
+  '.map': 'application/json'
+};
+
+const server = http.createServer((req, res) => {
+  try {
+    let cleanUrl = decodeURI(req.url.split('?')[0]);
+    let safePath = path.normalize(path.join(ROOT, cleanUrl));
+
+    // Ensure request does not escape root
+    if (!safePath.startsWith(ROOT)) {
+      res.writeHead(403, { 'Content-Type': 'text/plain' });
+      res.end('403 Forbidden');
+      return;
+    }
+
+    if (fs.existsSync(safePath) && fs.statSync(safePath).isDirectory()) {
+      safePath = path.join(safePath, 'index.html');
+    }
+
+    if (!fs.existsSync(safePath) || !fs.statSync(safePath).isFile()) {
+      res.writeHead(404, { 'Content-Type': 'text/plain' });
+      res.end('404 Not Found');
+      return;
+    }
+
+    const ext = path.extname(safePath).toLowerCase();
+    const contentType = MIME_TYPES[ext] || 'application/octet-stream';
+
+    res.writeHead(200, { 'Content-Type': contentType });
+    fs.createReadStream(safePath).pipe(res);
+  } catch (err) {
+    res.writeHead(500, { 'Content-Type': 'text/plain' });
+    res.end('500 Server Error: ' + err.message);
+  }
+});
+
+server.listen(PORT, '127.0.0.1', () => {
+  console.log('=================================================================');
+  console.log('       🛡️  ScamGuard Pro (CyberVigil AI) - Server Active');
+  console.log('=================================================================');
+  console.log(`\n  Local URL:   http://localhost:${PORT}/`);
+  console.log('  Mode:        Web & Mobile Preview');
+  console.log('\n  Press Ctrl+C to stop the server.\n');
+
+  // Automatically open browser on launch
+  const openCmd = process.platform === 'win32' ? `start http://localhost:${PORT}/` :
+                  process.platform === 'darwin' ? `open http://localhost:${PORT}/` :
+                  `xdg-open http://localhost:${PORT}/`;
+  exec(openCmd, () => {});
+});
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`\n[!] Port ${PORT} is already in use by another program.`);
+    console.error(`    Please close that application or set a different PORT.`);
+  } else {
+    console.error('\n[!] Server error:', err.message);
+  }
+});
