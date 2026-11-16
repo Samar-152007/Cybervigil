@@ -23,7 +23,7 @@ class ScamGuardApp {
   }
 
   init() {
-    console.log('🛡️ ScamGuard Pro (CyberVigil AI) Initializing in Mobile & Web Mode...');
+    console.log('🛡️ CyberVigil Initializing in Mobile & Web Mode...');
 
     // 1. Initialize Localization
     i18n.updateDom();
@@ -62,7 +62,7 @@ class ScamGuardApp {
       }
     });
 
-    console.log('✅ ScamGuard Pro Ready. Threat Shield Active.');
+    console.log('✅ CyberVigil Ready. Threat Shield Active.');
   }
 
   initMobileNav() {

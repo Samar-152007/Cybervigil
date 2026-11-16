@@ -1,5 +1,5 @@
 /**
- * ScamGuard Pro - Web & Mobile Build Pipeline
+ * CyberVigil - Web & Mobile Build Pipeline
  * Packages all client-side assets into the 'www' directory for Capacitor Android/iOS builds
  */
 const fs = require('fs');
@@ -8,7 +8,7 @@ const path = require('path');
 const ROOT_DIR = __dirname;
 const OUT_DIR = path.join(ROOT_DIR, 'www');
 
-console.log('🚀 Building ScamGuard Pro Mobile & Web Distribution into /www ...');
+console.log('🚀 Building CyberVigil Mobile & Web Distribution into /www ...');
 
 // Ensure clean output directory
 if (fs.existsSync(OUT_DIR)) {

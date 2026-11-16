@@ -1,4 +1,4 @@
-# 🛡️ ScamGuard Pro (CyberVigil AI)
+# 🛡️ CyberVigil
 > **Enterprise-Grade Multilingual Cybersecurity Awareness & Real-Time Threat Detection Mobile & Web Platform**
 
 [![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20iOS%20%7C%20Web%20(PWA)-brightgreen.svg)](#mobile--web-architecture)
@@ -10,7 +10,7 @@
 
 ## 📌 Executive Architecture Overview
 
-**ScamGuard Pro** (CyberVigil AI) is engineered as a **mobile-first application** with simultaneous **web platform** capabilities. It detects psychological coercion, phishing links, spoofed caller identities, and fraudulent legal documents in real time before financial harm occurs.
+**CyberVigil** is engineered as a **mobile-first application** with simultaneous **web platform** capabilities. It detects psychological coercion, phishing links, spoofed caller identities, and fraudulent legal documents in real time before financial harm occurs.
 
 ```text
 CYbersecurity app/

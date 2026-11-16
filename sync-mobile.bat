@@ -1,10 +1,10 @@
 @echo off
 setlocal
 pushd "%~dp0"
-title ScamGuard Pro - Mobile Sync
+title CyberVigil - Mobile Sync
 
 echo =================================================================
-echo       [+] ScamGuard Pro - Mobile Synchronizer (Android & iOS)
+echo       [+] CyberVigil - Mobile Synchronizer (Android & iOS)
 echo =================================================================
 echo.
 

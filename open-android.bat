@@ -1,10 +1,10 @@
 @echo off
 setlocal
 pushd "%~dp0"
-title ScamGuard Pro - Android Setup and Launcher
+title CyberVigil - Android Setup and Launcher
 
 echo =================================================================
-echo       [+] ScamGuard Pro - Android Mobile Environment
+echo       [+] CyberVigil - Android Mobile Environment
 echo =================================================================
 echo.
 

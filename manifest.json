@@ -1,6 +1,6 @@
 {
-  "name": "ScamGuard Pro - CyberVigil AI",
-  "short_name": "ScamGuard",
+  "name": "CyberVigil",
+  "short_name": "CyberVigil",
   "description": "Enterprise-Grade Multilingual Cybersecurity Awareness & Threat Detection Platform",
   "start_url": "index.html",
   "display": "standalone",

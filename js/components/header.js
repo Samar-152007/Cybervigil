@@ -27,10 +27,10 @@ export class HeaderComponent {
             </div>
             <div>
               <div class="flex items-center space-x-2">
-                <span class="text-xl font-bold tracking-wider text-white font-mono" data-i18n="appName">ScamGuard Pro</span>
+                <span class="text-xl font-bold tracking-wider text-white font-mono" data-i18n="appName">CyberVigil</span>
                 <span class="px-2 py-0.5 text-xs font-mono rounded bg-cyber-cyan/10 text-cyber-cyan border border-cyber-cyan/30">AI-SEC</span>
               </div>
-              <p class="text-xs text-cyber-muted hidden sm:block" data-i18n="appSubtitle">CyberVigil AI - Multilingual Threat Detection</p>
+              <p class="text-xs text-cyber-muted hidden sm:block" data-i18n="appSubtitle">AI - Multilingual Threat Detection</p>
             </div>
           </div>
 

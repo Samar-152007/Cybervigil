@@ -75,7 +75,7 @@ server.listen(PORT, '0.0.0.0', () => {
   const localIp = getLocalNetworkIp();
 
   console.log('=================================================================');
-  console.log('       🛡️  ScamGuard Pro (CyberVigil AI) - Active');
+  console.log('       🛡️  CyberVigil - Active');
   console.log('=================================================================');
   console.log(`\n  🖥️  On Your PC:      http://localhost:${PORT}/`);
   if (localIp) {

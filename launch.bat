@@ -1,10 +1,10 @@
 @echo off
 setlocal
 pushd "%~dp0"
-title ScamGuard Pro - Server Launcher
+title CyberVigil - Server Launcher
 
 echo =================================================================
-echo       [+] ScamGuard Pro (CyberVigil AI) - Unified Launcher
+echo       [+] CyberVigil - Unified Launcher
 echo =================================================================
 echo.
 
@@ -17,7 +17,7 @@ if /I "%~1"=="android" goto OPEN_ANDROID
 where node >nul 2>&1
 if %errorlevel% equ 0 (
     echo [*] Node.js runtime detected.
-    echo [*] Starting ScamGuard Pro server...
+    echo [*] Starting CyberVigil server...
     echo.
     node server.js
     if %errorlevel% neq 0 (
@@ -56,7 +56,7 @@ if defined PY_CMD (
 :: 3. Neither runtime found
 echo [!] Neither Node.js nor Python was found on your system.
 echo.
-echo To run ScamGuard Pro locally, please install Node.js:
+echo To run CyberVigil locally, please install Node.js:
 echo    https://nodejs.org/
 echo.
 pause

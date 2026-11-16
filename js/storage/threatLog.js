@@ -118,7 +118,7 @@ export class ThreatLogManager {
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(logs, null, 2));
     const dlAnchorElem = document.createElement('a');
     dlAnchorElem.setAttribute("href", dataStr);
-    dlAnchorElem.setAttribute("download", `scamguard_threat_audit_${Date.now()}.json`);
+    dlAnchorElem.setAttribute("download", `cybervigil_threat_audit_${Date.now()}.json`);
     dlAnchorElem.click();
   }
 
@@ -142,7 +142,7 @@ export class ThreatLogManager {
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", `scamguard_audit_log_${Date.now()}.csv`);
+    link.setAttribute("download", `cybervigil_audit_log_${Date.now()}.csv`);
     link.click();
   }
 

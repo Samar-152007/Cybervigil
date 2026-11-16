@@ -1,9 +1,9 @@
 /**
- * ScamGuard Pro - English Localization Dictionary
+ * CyberVigil - English Localization Dictionary
  */
 export const en = {
-  appName: "ScamGuard Pro",
-  appSubtitle: "CyberVigil AI - Multilingual Threat Detection & Response",
+  appName: "CyberVigil",
+  appSubtitle: "AI Multilingual Threat Detection & Response",
   shieldActive: "Threat Shield: Active",
   version: "v2.4 Enterprise",
 

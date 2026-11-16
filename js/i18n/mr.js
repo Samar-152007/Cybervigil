@@ -1,9 +1,9 @@
 /**
- * ScamGuard Pro - Marathi Localization Dictionary (मराठी)
+ * CyberVigil - Marathi Localization Dictionary (मराठी)
  */
 export const mr = {
-  appName: "स्कॅमगार्ड प्रो (ScamGuard Pro)",
-  appSubtitle: "सायबरविजिल एआय - बहुभाषिक सायबर धोका शोध आणि त्वरित सुरक्षा व्यासपीठ",
+  appName: "सायबरव्हिजिल (CyberVigil)",
+  appSubtitle: "एआय - बहुभाषिक सायबर धोका शोध आणि त्वरित सुरक्षा व्यासपीठ",
   shieldActive: "सुरक्षा शील्ड: सक्रिय",
   version: "v2.4 एंटरप्राइज",
 

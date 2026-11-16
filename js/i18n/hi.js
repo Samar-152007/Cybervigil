@@ -1,9 +1,9 @@
 /**
- * ScamGuard Pro - Hindi Localization Dictionary (हिन्दी)
+ * CyberVigil - Hindi Localization Dictionary (हिन्दी)
  */
 export const hi = {
-  appName: "स्कैमगार्ड प्रो (ScamGuard Pro)",
-  appSubtitle: "साइबरविजिल एआई - बहुभाषी साइबर खतरा पहचान और त्वरित सुरक्षा मंच",
+  appName: "साइबरविजिल (CyberVigil)",
+  appSubtitle: "एआई - बहुभाषी साइबर खतरा पहचान और त्वरित सुरक्षा मंच",
   shieldActive: "सुरक्षा शील्ड: सक्रिय",
   version: "v2.4 एंटरप्राइज",
 
