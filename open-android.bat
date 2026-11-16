@@ -1,26 +1,81 @@
 @echo off
 setlocal
 pushd "%~dp0"
-title ScamGuard Pro - Open in Android Studio
+title ScamGuard Pro - Android Setup and Launcher
 
 echo =================================================================
-echo       [+] ScamGuard Pro - Launch Android Studio
+echo       [+] ScamGuard Pro - Android Mobile Environment
 echo =================================================================
 echo.
 
-echo [*] Synchronizing latest assets...
+echo [*] Step 1: Packaging web assets and syncing with Android...
 call node build.js
-call npx cap sync
-
+call npx cap sync android
 echo.
-echo [*] Opening native project in Android Studio...
-call npx cap open android
-if %errorlevel% neq 0 (
-    echo.
-    echo [!] Could not open Android Studio automatically.
-    echo     You can open the "android" folder directly from Android Studio.
-    pause
+
+set "STUDIO_EXE="
+
+if defined CAPACITOR_ANDROID_STUDIO_PATH (
+    if exist "%CAPACITOR_ANDROID_STUDIO_PATH%" set "STUDIO_EXE=%CAPACITOR_ANDROID_STUDIO_PATH%"
 )
 
+if not defined STUDIO_EXE (
+    if exist "C:\Program Files\Android\Android Studio\bin\studio64.exe" (
+        set "STUDIO_EXE=C:\Program Files\Android\Android Studio\bin\studio64.exe"
+    )
+)
+
+if not defined STUDIO_EXE (
+    if exist "%LOCALAPPDATA%\Programs\Android Studio\bin\studio64.exe" (
+        set "STUDIO_EXE=%LOCALAPPDATA%\Programs\Android Studio\bin\studio64.exe"
+    )
+)
+
+if not defined STUDIO_EXE (
+    if exist "C:\Program Files (x86)\Android\Android Studio\bin\studio64.exe" (
+        set "STUDIO_EXE=C:\Program Files (x86)\Android\Android Studio\bin\studio64.exe"
+    )
+)
+
+if defined STUDIO_EXE goto FOUND_STUDIO
+goto NOT_FOUND_STUDIO
+
+:FOUND_STUDIO
+echo [*] Android Studio detected:
+echo     "%STUDIO_EXE%"
+echo.
+echo [*] Launching Android Studio with project: ./android ...
+start "" "%STUDIO_EXE%" "%CD%\android"
+echo [OK] Android Studio has been started!
+goto FINISH
+
+:NOT_FOUND_STUDIO
+echo =================================================================
+echo   [!] Android Studio is not installed on this computer.
+echo =================================================================
+echo.
+echo The native Android source code has already been generated in:
+echo    "%CD%\android"
+echo.
+echo To compile this into an APK or run it on an Android device:
+echo   1. Download and install Android Studio (Free):
+echo      https://developer.android.com/studio
+echo.
+echo   2. Open Android Studio, click "Open", and select the "android" folder.
+echo.
+echo -----------------------------------------------------------------
+echo   TIP: You can test the full Mobile App right now!
+echo -----------------------------------------------------------------
+echo   A. On this PC: Run "launch.bat", press F12, and press Ctrl+Shift+M
+echo      for the phone layout with mobile bottom navigation.
+echo.
+echo   B. On your phone: Run "launch.bat" and open the Wi-Fi IP address
+echo      shown in the terminal from your phone's browser!
+echo =================================================================
+goto FINISH
+
+:FINISH
+echo.
+pause
 popd
 endlocal
