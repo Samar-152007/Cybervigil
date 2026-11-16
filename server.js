@@ -1,10 +1,11 @@
 /**
- * ScamGuard Pro (CyberVigil AI) - Local Development & Preview Server
- * Native Node.js HTTP Server with full MIME support & auto browser launcher
+ * ScamGuard Pro (CyberVigil AI) - Local Development & Mobile Preview Server
+ * Native Node.js HTTP Server with full MIME support & multi-device preview
  */
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 const { exec } = require('child_process');
 
 const PORT = parseInt(process.env.PORT || '8080', 10);
@@ -23,12 +24,26 @@ const MIME_TYPES = {
   '.map': 'application/json'
 };
 
+function getLocalNetworkIp() {
+  try {
+    const interfaces = os.networkInterfaces();
+    for (const name of Object.keys(interfaces)) {
+      for (const iface of interfaces[name]) {
+        if (iface.family === 'IPv4' && !iface.internal) {
+          return iface.address;
+        }
+      }
+    }
+  } catch (e) {}
+  return null;
+}
+
 const server = http.createServer((req, res) => {
   try {
     let cleanUrl = decodeURI(req.url.split('?')[0]);
     let safePath = path.normalize(path.join(ROOT, cleanUrl));
 
-    // Ensure request does not escape root
+    // Prevent directory traversal attacks
     if (!safePath.startsWith(ROOT)) {
       res.writeHead(403, { 'Content-Type': 'text/plain' });
       res.end('403 Forbidden');
@@ -56,15 +71,21 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(PORT, '127.0.0.1', () => {
+server.listen(PORT, '0.0.0.0', () => {
+  const localIp = getLocalNetworkIp();
+
   console.log('=================================================================');
-  console.log('       🛡️  ScamGuard Pro (CyberVigil AI) - Server Active');
+  console.log('       🛡️  ScamGuard Pro (CyberVigil AI) - Active');
   console.log('=================================================================');
-  console.log(`\n  Local URL:   http://localhost:${PORT}/`);
-  console.log('  Mode:        Web & Mobile Preview');
+  console.log(`\n  🖥️  On Your PC:      http://localhost:${PORT}/`);
+  if (localIp) {
+    console.log(`  📱  On Your Phone:   http://${localIp}:${PORT}/ (Same Wi-Fi)`);
+  }
+  console.log('\n  Tip: In your browser, press F12 and toggle "Device Toolbar" (Ctrl+Shift+M)');
+  console.log('       to view the responsive mobile layout with bottom navigation.');
   console.log('\n  Press Ctrl+C to stop the server.\n');
 
-  // Automatically open browser on launch
+  // Automatically open browser on PC
   const openCmd = process.platform === 'win32' ? `start http://localhost:${PORT}/` :
                   process.platform === 'darwin' ? `open http://localhost:${PORT}/` :
                   `xdg-open http://localhost:${PORT}/`;
