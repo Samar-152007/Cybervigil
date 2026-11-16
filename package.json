@@ -1,0 +1,33 @@
+{
+  "name": "scamguard-pro",
+  "version": "1.0.0",
+  "description": "Enterprise-Grade Multilingual Cybersecurity Awareness & Real-Time Threat Detection Mobile & Web Platform",
+  "main": "js/app.js",
+  "scripts": {
+    "start": "node -e \"const http=require('http'),fs=require('fs'),path=require('path');const m={'.html':'text/html','.js':'text/javascript','.css':'text/css','.svg':'image/svg+xml','.json':'application/json','.png':'image/png','.jpg':'image/jpeg','.ico':'image/x-icon'};http.createServer((q,r)=>{let u=decodeURI(q.url.split('?')[0]);let p=path.join(process.cwd(),u);if(fs.existsSync(p)&&fs.statSync(p).isDirectory())p=path.join(p,'index.html');fs.readFile(p,(e,d)=>{if(e){r.writeHead(404,{'Content-Type':'text/plain'});r.end('404 Not Found');}else{r.writeHead(200,{'Content-Type':m[path.extname(p).toLowerCase()]||'application/octet-stream'});r.end(d);}});}).listen(8080,'127.0.0.1',()=>console.log('[ScamGuard Pro] Web App running at http://localhost:8080/'));\"",
+    "build": "node build.js",
+    "cap:sync": "npm run build && npx cap sync",
+    "cap:android": "npx cap open android",
+    "cap:ios": "npx cap open ios",
+    "cap:run:android": "npx cap run android"
+  },
+  "keywords": [
+    "cybersecurity",
+    "mobile-app",
+    "android",
+    "ios",
+    "capacitor",
+    "phishing-detector"
+  ],
+  "author": "Samarjeet Suryawanshi",
+  "license": "MIT",
+  "dependencies": {
+    "@capacitor/android": "^8.6.2",
+    "@capacitor/app": "^8.1.2",
+    "@capacitor/cli": "^8.6.2",
+    "@capacitor/core": "^8.6.2",
+    "@capacitor/haptics": "^8.0.2",
+    "@capacitor/ios": "^8.6.2",
+    "@capacitor/status-bar": "^8.0.4"
+  }
+}

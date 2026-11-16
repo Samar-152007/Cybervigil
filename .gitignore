@@ -1,3 +1,10 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build outputs
+www/
+
 # Operating System Files
 .DS_Store
 Thumbs.db

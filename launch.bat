@@ -1,13 +1,13 @@
 @echo off
 setlocal
-title ScamGuard Pro - Local Server Launcher
+title ScamGuard Pro - Web & Mobile Unified Launcher
 
 :: Default configuration
 set PORT=8080
 set PY_CMD=python
 
 echo =================================================================
-echo       [+] ScamGuard Pro (CyberVigil AI) - Unified Launcher
+echo       [+] ScamGuard Pro (CyberVigil AI) - Web & Mobile Launcher
 echo =================================================================
 echo.
 
@@ -15,6 +15,9 @@ echo.
 if /I "%~1"=="node" goto RUN_NODE
 if /I "%~1"=="python" goto RUN_PYTHON
 if /I "%~1"=="py" goto RUN_PYTHON
+if /I "%~1"=="mobile" goto SYNC_MOBILE
+if /I "%~1"=="sync" goto SYNC_MOBILE
+if /I "%~1"=="android" goto OPEN_ANDROID
 
 :: 2. Detect installed environments
 set HAS_NODE=0
@@ -35,30 +38,17 @@ if %errorlevel% equ 0 (
     )
 )
 
-:: 3. Decide based on detected environments
-if %HAS_NODE% equ 1 if %HAS_PYTHON% equ 1 goto BOTH_AVAILABLE
-if %HAS_NODE% equ 1 goto RUN_NODE
-if %HAS_PYTHON% equ 1 goto RUN_PYTHON
-
-:: Neither found
-echo [!] Neither Node.js nor Python was detected on your system.
+:: 3. Interactive Menu
+echo Select operational mode:
+echo   [1] Start Web Application ^& Browser (Node.js)
+echo   [2] Start Web Application ^& Browser (Python)
+echo   [3] Build ^& Synchronize Mobile App (Android ^& iOS)
+echo   [4] Open Native Android Studio Project
 echo.
-echo To run ScamGuard Pro, please install either:
-echo   - Node.js (https://nodejs.org) OR
-echo   - Python  (https://python.org)
-echo.
-pause
-exit /b 1
-
-:BOTH_AVAILABLE
-echo Both Node.js and Python are detected on your system!
-echo.
-echo Select server runtime to launch:
-echo   [1] Node.js (Recommended)
-echo   [2] Python
-echo.
-echo Auto-launching Option 1 (Node.js) in 3 seconds...
-choice /c 12 /t 3 /d 1 /m "Select option"
+echo Auto-launching Option 1 (Web & Browser) in 4 seconds...
+choice /c 1234 /t 4 /d 1 /m "Select option"
+if %errorlevel% equ 4 goto OPEN_ANDROID
+if %errorlevel% equ 3 goto SYNC_MOBILE
 if %errorlevel% equ 2 goto RUN_PYTHON
 goto RUN_NODE
 
@@ -70,7 +60,7 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 echo.
-echo [OK] Launching with Node.js on port %PORT%...
+echo [OK] Launching Web Application on port %PORT%...
 goto START_BROWSER_AND_SERVE_NODE
 
 :RUN_PYTHON
@@ -88,8 +78,32 @@ if %errorlevel% equ 0 (
     )
 )
 echo.
-echo [OK] Launching with Python (%PY_CMD%) on port %PORT%...
+echo [OK] Launching Web Application with Python (%PY_CMD%) on port %PORT%...
 goto START_BROWSER_AND_SERVE_PYTHON
+
+:SYNC_MOBILE
+echo.
+echo [*] Step 1: Packaging web assets into /www ...
+call node build.js
+echo.
+echo [*] Step 2: Synchronizing assets with Android and iOS native projects...
+call npx cap sync
+echo.
+echo =================================================================
+echo   [OK] Mobile Synchronization Complete!
+echo   * Android project: ./android
+echo   * iOS project:     ./ios
+echo =================================================================
+pause
+goto END
+
+:OPEN_ANDROID
+echo.
+echo [*] Building and opening Android Studio...
+call node build.js
+call npx cap sync
+call npx cap open android
+goto END
 
 :START_BROWSER_AND_SERVE_NODE
 echo [*] Opening http://localhost:%PORT% in your default browser...

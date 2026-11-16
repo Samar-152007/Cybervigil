@@ -2,12 +2,19 @@
 <html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>ScamGuard Pro | Multilingual Cybersecurity AI & Threat Detection Platform</title>
   <meta name="description" content="ScamGuard Pro (CyberVigil AI) is an enterprise-grade multilingual cybersecurity awareness and threat detection platform supporting English, Hindi (हिन्दी), and Marathi (मराठी). Detect phishing, digital arrest, utility scams, and fraudulent documents in real-time.">
   <meta name="keywords" content="cybersecurity, scam detector, digital arrest, phishing checker, 1930 helpline, cybercrime india, fake sms, caller id check">
   <meta name="author" content="ScamGuard Pro / CyberVigil AI Security Architecture">
   
+  <!-- Mobile PWA & App Meta -->
+  <meta name="theme-color" content="#070b14">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ScamGuard Pro">
+  <link rel="manifest" href="manifest.json">
+
   <!-- Favicon / Shield Icon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2306b6d4'><path d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z'/></svg>">
 
@@ -37,7 +44,7 @@
     }
   </script>
 
-  <!-- Custom HUD & Neon Stylesheet -->
+  <!-- Custom HUD, Mobile Safe-Areas & Neon Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-cyber-bg text-slate-100 flex flex-col min-h-screen">
@@ -46,7 +53,7 @@
   <div id="app-header"></div>
 
   <!-- Main Multi-Screen Content Container -->
-  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 pb-24 md:pb-8">
     
     <!-- Screen 1: Dashboard View -->
     <div id="screen-dashboard" class="screen-view"></div>
@@ -65,8 +72,41 @@
 
   </main>
 
-  <!-- Cybersecurity Platform Footer -->
-  <footer class="border-t border-cyber-border bg-cyber-darker py-8 mt-12">
+  <!-- Native Mobile Bottom Tab Bar (Optimized for one-hand thumb navigation on mobile phones) -->
+  <nav id="mobile-nav-bar" class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-cyber-darker/95 backdrop-blur-md border-t border-cyber-border/80 px-2 py-2 safe-area-bottom">
+    <div class="grid grid-cols-4 gap-1">
+      <button data-mobile-nav="dashboard" class="mobile-nav-btn active flex flex-col items-center justify-center py-1.5 px-1 rounded-xl text-cyber-cyan transition-colors">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+        <span class="text-[10px] font-mono mt-1 font-semibold" data-i18n="nav_dashboard">Overview</span>
+      </button>
+
+      <button data-mobile-nav="scanner" class="mobile-nav-btn flex flex-col items-center justify-center py-1.5 px-1 rounded-xl text-cyber-muted hover:text-white transition-colors">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+        <span class="text-[10px] font-mono mt-1" data-i18n="nav_scanner">Scan</span>
+      </button>
+
+      <button data-mobile-nav="incidentHub" class="mobile-nav-btn flex flex-col items-center justify-center py-1.5 px-1 rounded-xl text-cyber-muted hover:text-white transition-colors">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+        </svg>
+        <span class="text-[10px] font-mono mt-1" data-i18n="nav_incidentHub">1930 Hub</span>
+      </button>
+
+      <button data-mobile-nav="threatLogs" class="mobile-nav-btn flex flex-col items-center justify-center py-1.5 px-1 rounded-xl text-cyber-muted hover:text-white transition-colors">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span class="text-[10px] font-mono mt-1" data-i18n="nav_threatLogs">Logs</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Cybersecurity Platform Footer (Hidden on small mobile devices to maximize vertical workspace) -->
+  <footer class="hidden md:block border-t border-cyber-border bg-cyber-darker py-8 mt-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
       
       <!-- Brand & Security Tagline -->
