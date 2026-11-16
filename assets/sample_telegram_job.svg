@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" width="100%" height="100%">
+  <!-- Telegram App Window Mockup -->
+  <rect width="600" height="750" fill="#0e1621"/>
+  
+  <!-- Header Bar -->
+  <rect width="600" height="70" fill="#17212b"/>
+  <circle cx="45" cy="35" r="22" fill="#2b5278"/>
+  <text x="45" y="42" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">VIP</text>
+  <text x="80" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">VIP TASK DISPATCH GROUP #82</text>
+  <text x="80" y="50" font-family="Arial, sans-serif" font-size="12" fill="#6c7883">4,819 members, 842 online</text>
+
+  <!-- Pinned Message -->
+  <rect x="15" y="80" width="570" height="38" rx="6" fill="#17212b" stroke="#232e3c" stroke-width="1"/>
+  <line x1="25" y1="88" x2="25" y2="110" stroke="#5288c1" stroke-width="3"/>
+  <text x="35" y="96" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#5288c1">Pinned Message</text>
+  <text x="35" y="110" font-family="Arial, sans-serif" font-size="11" fill="#7f91a4">Daily task dispatch rule: 100% guarantee payout within 15 minutes</text>
+
+  <!-- Message 1 (Admin Bot) -->
+  <rect x="25" y="135" width="460" height="110" rx="12" fill="#182533"/>
+  <text x="40" y="160" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#5288c1">HR Recruiter @Elena_Tasks</text>
+  <text x="40" y="182" font-family="Arial, sans-serif" font-size="13" fill="#e1e3e6">🎉 Congratulations! Trial Task 1 Completed!</text>
+  <text x="40" y="202" font-family="Arial, sans-serif" font-size="13" fill="#e1e3e6">You liked 3 YouTube videos. We have credited</text>
+  <text x="40" y="222" font-family="Arial, sans-serif" font-size="13" fill="#4ade80" font-weight="bold">₹150 directly to your GPay UPI ID.</text>
+  <text x="445" y="235" font-family="Arial, sans-serif" font-size="10" fill="#6c7883">10:41 AM</text>
+
+  <!-- Message 2 (VIP Crypto Task Bait) -->
+  <rect x="25" y="260" width="530" height="270" rx="12" fill="#182533" stroke="#eab308" stroke-width="1.5"/>
+  <text x="40" y="285" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#eab308">⚡ HIGH PRIORITY: VIP TASK LEVEL 2</text>
+  
+  <text x="40" y="312" font-family="Arial, sans-serif" font-size="13" fill="#e1e3e6">To unlock full day earnings of ₹5,000 - ₹8,000:</text>
+  <text x="40" y="332" font-family="Arial, sans-serif" font-size="13" fill="#e1e3e6">You must complete a merchant trading order:</text>
+  
+  <!-- Investment Tier Box -->
+  <rect x="40" y="350" width="500" height="95" rx="8" fill="#0e1621"/>
+  <text x="55" y="375" font-family="'Courier New', monospace" font-size="13" fill="#facc15" font-weight="bold">• Tier A: Pay ₹5,000  -> Return: ₹7,500 (15 Mins)</text>
+  <text x="55" y="398" font-family="'Courier New', monospace" font-size="13" fill="#4ade80" font-weight="bold">• Tier B: Pay ₹20,000 -> Return: ₹32,000 (Guaranteed)</text>
+  <text x="55" y="421" font-family="'Courier New', monospace" font-size="13" fill="#38bdf8" font-weight="bold">• Tier C: Pay ₹50,000 -> Return: ₹85,000 + VIP Bonus</text>
+
+  <text x="40" y="468" font-family="Arial, sans-serif" font-size="12" fill="#f87171" font-weight="bold">⚠️ Timer: Pay within 10 minutes or deposit bonus is lost!</text>
+  <text x="40" y="492" font-family="'Courier New', monospace" font-size="13" fill="#93c5fd">UPI ID: merchant.viporder82@ybl</text>
+  <text x="515" y="520" font-family="Arial, sans-serif" font-size="10" fill="#6c7883">10:43 AM</text>
+
+  <!-- Message 3 (Fake Member Testimonial) -->
+  <rect x="25" y="545" width="480" height="80" rx="12" fill="#182533"/>
+  <text x="40" y="570" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#38bdf8">Rahul_Sharma (Group Member)</text>
+  <text x="40" y="592" font-family="Arial, sans-serif" font-size="13" fill="#e1e3e6">"Received ₹32,000 in my HDFC account just now!!</text>
+  <text x="40" y="612" font-family="Arial, sans-serif" font-size="13" fill="#e1e3e6">Thank you Elena ma'am, this system is 100% genuine!"</text>
+  <text x="465" y="615" font-family="Arial, sans-serif" font-size="10" fill="#6c7883">10:44 AM</text>
+
+  <!-- Bottom Fraud Alert Tag -->
+  <rect x="50" y="650" width="500" height="42" rx="8" fill="#ef4444" fill-opacity="0.15" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="300" y="676" font-family="Arial, sans-serif" font-size="13" fill="#ef4444" font-weight="bold" text-anchor="middle">🚨 CLASSIC PIG-BUTCHERING TELEGRAM TASK FRAUD</text>
+</svg>

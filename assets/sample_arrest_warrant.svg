@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f4f4f7"/>
+    </linearGradient>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Document Card Background -->
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <rect x="25" y="25" width="750" height="950" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+
+  <!-- Top Border Accent -->
+  <rect x="25" y="25" width="750" height="8" fill="#dc2626"/>
+
+  <!-- Official Header Area -->
+  <g transform="translate(50, 60)">
+    <!-- Fake Emblem / Seal -->
+    <circle cx="50" cy="45" r="38" fill="#f8fafc" stroke="#b91c1c" stroke-width="3"/>
+    <circle cx="50" cy="45" r="30" fill="none" stroke="#b91c1c" stroke-dasharray="3,3"/>
+    <text x="50" y="42" font-family="'Courier New', monospace" font-size="9" font-weight="bold" fill="#b91c1c" text-anchor="middle">GOVT OF INDIA</text>
+    <text x="50" y="55" font-family="'Courier New', monospace" font-size="8" font-weight="bold" fill="#0f172a" text-anchor="middle">CYBER CELL</text>
+
+    <!-- Header Text -->
+    <text x="120" y="32" font-family="'Times New Roman', serif" font-size="20" font-weight="bold" fill="#0f172a">CENTRAL BUREAU OF INVESTIGATION (CBI)</text>
+    <text x="120" y="52" font-family="'Times New Roman', serif" font-size="14" font-weight="bold" fill="#b91c1c">CYBER CRIME ENFORCEMENT &amp; NARCOTICS SURVEILLANCE</text>
+    <text x="120" y="68" font-family="Arial, sans-serif" font-size="11" fill="#64748b">CGO Complex, Lodhi Road, New Delhi - 110003 | Docket No: CBI/ND/2026/8941A</text>
+  </g>
+
+  <!-- Red Notice Banner -->
+  <rect x="50" y="160" width="700" height="42" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5" rx="4"/>
+  <text x="400" y="186" font-family="'Arial Black', sans-serif" font-size="16" fill="#991b1b" font-weight="bold" text-anchor="middle">
+    CONFIDENTIAL: IMMEDIATE DIGITAL ARREST WARRANT
+  </text>
+
+  <!-- Document Meta Grid -->
+  <g transform="translate(60, 230)" font-family="Arial, sans-serif" font-size="13">
+    <text x="0" y="0" font-weight="bold" fill="#334155">Case Reference:</text>
+    <text x="140" y="0" fill="#0f172a">CR-CBI/DEL/8941-NARCO/2026</text>
+
+    <text x="420" y="0" font-weight="bold" fill="#334155">Date of Issuance:</text>
+    <text x="540" y="0" fill="#0f172a">29 OCTOBER 2026</text>
+
+    <text x="0" y="28" font-weight="bold" fill="#334155">Summoned Accused:</text>
+    <text x="140" y="28" fill="#b91c1c" font-weight="bold">TARGET CITIZEN (Aadhaar Linked)</text>
+
+    <text x="420" y="28" font-weight="bold" fill="#334155">Urgency Level:</text>
+    <text x="540" y="28" fill="#dc2626" font-weight="bold">CRITICAL / LEVEL-5</text>
+  </g>
+
+  <line x1="50" y1="285" x2="750" y2="285" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- Body Text -->
+  <g transform="translate(60, 320)" font-family="Times New Roman, serif" font-size="15" fill="#1e293b">
+    <text x="0" y="0" font-weight="bold">SPECIAL ORDER UNDER DIGITAL INVESTIGATION ACT:</text>
+    
+    <text x="0" y="30" font-size="14" font-family="Arial, sans-serif">1. An international parcel containing 16 illegal passports, 58 grams of narcotics (MDMA),</text>
+    <text x="0" y="50" font-size="14" font-family="Arial, sans-serif">   and evidence of ₹4.8 Crore money laundering was confiscated at Mumbai Air Cargo.</text>
+    <text x="0" y="70" font-size="14" font-family="Arial, sans-serif">   Your National Aadhaar Card and bank accounts are registered as the primary receiver.</text>
+
+    <text x="0" y="110" font-size="14" font-family="Arial, sans-serif">2. In accordance with Section 41A, CrPC, you have been placed under <tspan font-weight="bold" fill="#b91c1c">DIGITAL ARREST</tspan>.</text>
+    <text x="0" y="130" font-size="14" font-family="Arial, sans-serif">   You are forbidden from stepping outside your residence or communicating with family.</text>
+
+    <text x="0" y="170" font-size="14" font-family="Arial, sans-serif">3. Mandatory Real-Time Video Interrogation:</text>
+    <text x="20" y="195" font-size="13" font-family="'Courier New', monospace" fill="#0284c7" font-weight="bold">Connect Skype: cbi.surveillance.cell@skype</text>
+
+    <text x="0" y="235" font-size="14" font-family="Arial, sans-serif">4. Security Collateral Clearance Deposit:</text>
+    <text x="0" y="255" font-size="14" font-family="Arial, sans-serif">   To prevent physical arrest and freeze orders, immediately transfer refundable collateral</text>
+    <text x="0" y="275" font-size="14" font-family="Arial, sans-serif">   of <tspan font-weight="bold" fill="#b91c1c">₹2,50,000/-</tspan> to the National Verifying Treasury Account:</text>
+  </g>
+
+  <!-- Bank Account Box -->
+  <rect x="60" y="620" width="680" height="90" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-dasharray="4,4"/>
+  <g transform="translate(80, 650)" font-family="'Courier New', monospace" font-size="14" fill="#0f172a" font-weight="bold">
+    <text x="0" y="0">ACCOUNT NAME : RESERVE FINANCIAL ESCROW VERIFY</text>
+    <text x="0" y="24">ACCOUNT NO   : 918273645109</text>
+    <text x="0" y="48">IFSC CODE    : SBIN0001824 | BRANCH: SPECIAL RECOVERY</text>
+  </g>
+
+  <!-- Stamp and Signatures -->
+  <g transform="translate(500, 780)">
+    <!-- Fake Red Stamp -->
+    <rect x="-40" y="-30" width="160" height="70" rx="8" fill="none" stroke="#dc2626" stroke-width="3" transform="rotate(-12)"/>
+    <text x="40" y="5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#dc2626" text-anchor="middle" transform="rotate(-12)">WARRANT CONFIRMED</text>
+    <text x="40" y="25" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#dc2626" text-anchor="middle" transform="rotate(-12)">SUPREME COURT BENCH</text>
+
+    <!-- Sign -->
+    <path d="M-10,80 Q20,60 50,75 T110,65" fill="none" stroke="#1e3a8a" stroke-width="2.5"/>
+    <text x="50" y="105" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">Chief Investigation Officer</text>
+    <text x="50" y="122" font-family="Arial, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Central Enforcement Bureau</text>
+  </g>
+
+  <!-- Watermark -->
+  <text x="400" y="550" font-family="'Arial Black', sans-serif" font-size="64" fill="rgba(239, 68, 68, 0.07)" text-anchor="middle" transform="rotate(-30 400 550)">FORGED EVIDENCE</text>
+</svg>
